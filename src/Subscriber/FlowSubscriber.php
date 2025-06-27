@@ -132,6 +132,8 @@ class FlowSubscriber implements EventSubscriberInterface
             $localCode,
             $businessEvent->getContext(),
         );
+
+        $this->translator->shouldResetInjection = true;
     }
 
     private function getLocaleCode(string $languageId, Context $context): ?string
